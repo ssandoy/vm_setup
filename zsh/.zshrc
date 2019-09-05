@@ -1,11 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/devUtils/jetbrains/idea/bin
-
 LANG=en_US.utf8
+#$PATH=$PATH:$HOME
 
-export PATH
+#export PATH
 
 
 # Path to your oh-my-zsh installation.
@@ -99,17 +98,15 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
- alias work="cd ~/Work"
- alias work_git="cd ~/Work/Git"
- alias postman="cd ~/Work/Postman; ./Postman"
+ #alias git c="git commit"
+ alias mvnb="mvn clean install -DskipTests"
  alias move_right="i3-msg move workspace to output right"
  alias move_left="i3-msg move workspace to output left"
- alias ER="cd ~/Work/Git/ER"
  alias curltime="curl -s -o /dev/null -w '%{time_starttransfer}\n' "$@""
- alias elastic="sh ~/Work/elasticsearch-5.6.8/bin/elasticsearch"
- alias mvnci="mvn clean install -P all-tests"
- alias ..="cd .."
+ alias xmerge="[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources"
+
+# alias mvnci="mvn clean install -P all-tests"
+# alias ..="cd .."
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line root)
 
 function lpc() {
