@@ -239,9 +239,11 @@ focus_follows_mouse no
 
 # start rofi (a program launcher)
 bindsym $mod+space exec dmenu_run
-#startup appse
+#startup apps
 exec google-chrome
-exec spotify
+exec idea
+exec postman
+exec code
 exec_always compton -f
 exec_always feh --bg-scale $HOME/Pictures/bakgrunn.jpg
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
