@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Shift+Return exec urxvt 
 
+# start a terminal in the current folder
+bindsym $mod+ctrl+o exec $HOME/dotfiles/scripts/i3_urxvt_current_dir.sh $(cat /tmp/whereami) &> /tmp/out
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -249,6 +252,9 @@ popup_during_fullscreen smart
 
 # mouse settings:
 focus_follows_mouse no
+
+# Add possibility to toggle between norwegian and US layout.
+exec --no-startup-id "setxkbmap -layout us,no -option 'grp:lalt_lshift_toggle'"
 
 # start rofi (a program launcher)
 bindsym $mod+space exec dmenu_run
