@@ -165,11 +165,12 @@ for_window [class="jetbrains-idea" title="Favorites"] floating disable
 for_window [class="jetbrains-idea" title="Find"] floating disable
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 
-#chrome
-#for_window [class="chrome"] border pixel 0
+#Remove ugly border 
+for_window [class="chrome"] border pixel 0
+for_window [class="Slack"] border pixel 0
+# Teams-app.
+for_window [class="Electron"] border pixel 0
 
-#spotify
-for_window [class="Spotify"] move to workspace $workspace4         
 #slack
 assign [class="Slack"] $workspace2
 #Evolution
@@ -185,26 +186,26 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym oslash resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym j resize shrink width 10 px or 10 ppt
+	bindsym k resize grow height 10 px or 10 ppt
+	bindsym l resize shrink height 10 px or 10 ppt
+	bindsym oslash resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -219,28 +220,28 @@ set $inactive-text-color        #676E7D
 set $urgent-bg-color            #E53935
 
 # window colors
-#                       border                       background                 text                 indicator
-client.focused          $bg-color                    $bg-color                  $text-color          #ed8712
-client.unfocused        $inactive-bg-color           $inactive-bg-color     $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color           $inactive-bg-color         $inactive-text-color #ed8712
-client.urgent           $urgent-bg-color             $urgent-bg-color           $text-color          #00ff00
+#                       border                       background                 text                 	indicator
+client.focused          $inactive-window-color       $inactive-window-color                  $text-color          	#ed8712
+client.unfocused        $inactive-bg-color           $inactive-bg-color     	$inactive-text-color    #00ff00
+client.focused_inactive $inactive-bg-color           $inactive-bg-color         $inactive-text-color 	#ed8712
+client.urgent           $urgent-bg-color             $urgent-bg-color           $text-color          	#00ff00
 
 #hide_edge_borders both
 
 bindsym $mod+shift+x exec i3lock -t -i ~/Pictures/lock.png
  
 bar {
-        #position top
-        status_command i3status
+	#position top
+	status_command i3status
 	font pango: DejaVu Sans, Font Awesome 5 Free 13
 	colors {
-                background $inactive-bg-color
-                separator #757575
-                #                  border             background         text
-                focused_workspace  $bg-color          $bg-color          $text-color
-                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-        }        
+		background $inactive-bg-color
+		separator #757575
+		#                  border             		   	background         		text
+		focused_workspace  $inactive-window-color          	$inactive-window-color          $inactive-bg-color
+		inactive_workspace $inactive-bg-color 			$inactive-bg-color 		$inactive-text-color
+		urgent_workspace   $urgent-bg-color   			$urgent-bg-color   		$text-color
+	}        
 }
 
 # Screen brightness controls
@@ -273,6 +274,9 @@ exec  xrandr --output "eDP-1" --mode "1440x900"
 
 # Bindsym to blueman
 bindsym $mod+shift+b exec --no-startup-id blueman-manager
+
+# Toggle mouse jump to active windows output|none
+mouse_warping none
 
 # key-bindings for volume-buttonsn
 # change volume or toggle mute FIXME
