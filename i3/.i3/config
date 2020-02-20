@@ -168,6 +168,7 @@ for_window [class="^jetbrains-.+"][window_type=dialog] focus
 #Remove ugly border 
 for_window [class="chrome"] border pixel 0
 for_window [class="Firefox Developer Edition"] border pixel 0
+for_window [class="Firefox"] border pixel 0
 for_window [class="Slack"] border pixel 0
 # Teams-app.
 for_window [class="Electron"] border pixel 0
@@ -268,7 +269,7 @@ exec_always feh --bg-scale $HOME/Pictures/bakgrunn.jpg
 
 
 #set resolution
-exec  xrandr --output "eDP-1" --mode "1440x900"
+exec  xrandr --output "eDP-1" --mode "1920x1080"
 #set correct order of screens.
 exec xrandr --output "eDP-1" --mode "1366x768" --right-of DP-1-1
 exec xrandr --output "DP-1-1" --mode "1920x1200" --right-of "DP-1-2" 
