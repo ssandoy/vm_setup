@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
  #alias git c="git commit"
  alias mvnb="mvn clean install -DskipTests"
+ alias nrs="npm run start"
  alias move_right="i3-msg move workspace to output right"
  alias move_left="i3-msg move workspace to output left"
  alias curltime="curl -s -o /dev/null -w '%{time_starttransfer}\n' "$@""

@@ -167,6 +167,7 @@ for_window [class="^jetbrains-.+"][window_type=dialog] focus
 
 #Remove ugly border 
 for_window [class="chrome"] border pixel 0
+for_window [class="Firefox Developer Edition"] border pixel 0
 for_window [class="Slack"] border pixel 0
 # Teams-app.
 for_window [class="Electron"] border pixel 0
@@ -261,9 +262,6 @@ exec --no-startup-id "setxkbmap -layout us,no -option 'grp:lalt_lshift_toggle'"
 bindsym $mod+space exec dmenu_run
 #startup apps
 exec google-chrome
-exec idea
-exec postman
-exec code
 exec_always compton -f
 exec_always feh --bg-scale $HOME/Pictures/bakgrunn.jpg
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -271,6 +269,10 @@ exec_always feh --bg-scale $HOME/Pictures/bakgrunn.jpg
 
 #set resolution
 exec  xrandr --output "eDP-1" --mode "1440x900"
+#set correct order of screens.
+exec xrandr --output "eDP-1" --mode "1366x768" --right-of DP-1-1
+exec xrandr --output "DP-1-1" --mode "1920x1200" --right-of "DP-1-2" 
+exec xrandr --output "DP-1-2" --mode "1920x1200"
 
 # Bindsym to blueman
 bindsym $mod+shift+b exec --no-startup-id blueman-manager
