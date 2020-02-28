@@ -39,7 +39,7 @@
 URxvt*.font:xft:DejaVu Sans Mono for Powerline:autohint=true:pixelsize=16
 
 URxvt.perl-ext-common:default,matcher,resize-font,
-urxvt.url-launcher: /usr/bin/google-chrome
+urxvt.url-launcher: /usr/bin/firefox-dev-edition
 urxvt.matcher.button: 1
 
 URxvt.keysym.C-Down:  resize-font:smaller

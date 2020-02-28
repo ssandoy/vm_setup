@@ -264,16 +264,17 @@ bindsym $mod+space exec dmenu_run
 #startup apps
 exec google-chrome
 exec_always compton -f
-exec_always feh --bg-scale $HOME/Pictures/bakgrunn.jpg
+exec_always feh --bg-scale $HOME/Pictures/background.jpg
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 #set resolution
 exec  xrandr --output "eDP-1" --mode "1920x1080"
 #set correct order of screens.
-exec xrandr --output "eDP-1" --mode "1366x768" --right-of DP-1-1
-exec xrandr --output "DP-1-1" --mode "1920x1200" --right-of "DP-1-2" 
-exec xrandr --output "DP-1-2" --mode "1920x1200"
+exec xrandr --output "DP-2-3" --mode "1920x1200"                   
+exec xrandr --output "DP-2-2" --mode "1920x1200" --right-of DP-2-3
+exec xrandr --output "eDP-1" --mode "1920x1080" --right-of DP-2-2 
+
 
 # Bindsym to blueman
 bindsym $mod+shift+b exec --no-startup-id blueman-manager
