@@ -36,7 +36,7 @@ bindsym $mod+Shift+Return exec urxvt
 bindsym $mod+ctrl+o exec $HOME/dotfiles/scripts/i3_urxvt_current_dir.sh $(cat /tmp/whereami) &> /tmp/out
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+BackSpace kill
 
 # start rofi (a program launcher)
 #bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg  "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
@@ -157,13 +157,13 @@ new_float normal
 #assign [class="jetbrains-idea"] $workspace3
 for_window [class="jetbrains-idea" instance="sun-awt-X11-XDialogPeer"] floating enable 
 for_window [class="jetbrains-idea"] border pixel 0 
-for_window [class="jetbrains-idea" instance="sun-awt-X11-XDialogPeer"] floating enable
 for_window [class="jetbrains-idea" title="Run"] floating disable
 for_window [class="jetbrains-idea" title="Debug"] floating disable
 for_window [class="jetbrains-idea" title="Project"] floating disable
 for_window [class="jetbrains-idea" title="Favorites"] floating disable
 for_window [class="jetbrains-idea" title="Find"] floating disable
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
+for_window [title="Microsoft Teams Notification"] floating enable
 
 #Remove ugly border 
 for_window [class="chrome"] border pixel 0
@@ -175,10 +175,7 @@ for_window [class="Electron"] border pixel 0
 
 #slack
 assign [class="Slack"] $workspace2
-#Evolution
-#assign [class="Evolution"] $workspace10
-#Hipchat
-#assign [class="Hipchat"] $workspace2
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)

@@ -106,7 +106,8 @@ source $ZSH/oh-my-zsh.sh
  alias move_left="i3-msg move workspace to output left"
  alias curltime="curl -s -o /dev/null -w '%{time_starttransfer}\n' "$@""
  alias xmerge="[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources"
-
+ alias init_skade_app="init-skade && exit"
+ alias startsonar="docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube"
 # alias mvnci="mvn clean install -P all-tests"
 # alias ..="cd .."
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line root)
@@ -117,4 +118,39 @@ function lpc() {
   lpass show $1|grep $field|awk '{print $2}'|xclip -selection c
   echo 'Copied password from '$1 
 
+}
+
+function kfp() {
+	cd ~/git/kfp-$1
+}
+
+function init-skade() {
+	# TODO IF $1 == INSTALL, set mvn and npm i
+	cd ~/git/kfp-skade;
+	if [ "$1" = "start" ] 
+	then 
+	   mvn="mvn jetty:run"
+	   npm="npm start"
+	else 
+		mvn="xdotool type mvnb && zsh"
+		npm=" xdotool type npm\ i && zsh"
+	fi
+	
+	urxvt -e zsh -c "cd kfp-skade-server;$mvn" &!;
+	sleep 0.2
+	urxvt -e zsh -c "cd kfp-skade-client;$npm" &!;
+	sleep 0.2
+	urxvt -e zsh -c "cd kfp-skade-client-react;$npm" &!;
+	echo "http://local.utv.sparebank1.no:7002/privat/forsikring" | xclip -selection clipboard
+	exit 0;
+}
+
+function get_brand() {
+	if [ "$1" = "dnb" ] 
+	then 
+		brand="dnbforsikring"
+	else
+		brand="sparebank1"
+	fi 
+	echo "http://local.utv.$brand.no:7002/privat/forsikring" | xclip -selection clipboard
 }
