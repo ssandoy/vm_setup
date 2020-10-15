@@ -1,0 +1,17 @@
+<application>
+  <component name="TodoConfiguration">
+    <pattern useCustomColors="true" pattern="\btodo\b.*">
+      <option name="FOREGROUND" value="adff00" />
+      <option name="FONT_TYPE" value="2" />
+    </pattern>
+    <pattern useCustomColors="true" pattern="\bfixme\b.*">
+      <option name="FOREGROUND" value="ff6f72" />
+      <option name="FONT_TYPE" value="2" />
+    </pattern>
+    <pattern useCustomColors="true" pattern="\btestme\b.*">
+      <option name="FOREGROUND" value="beff" />
+      <option name="FONT_TYPE" value="2" />
+      <option name="ERROR_STRIPE_COLOR" value="977ab" />
+    </pattern>
+  </component>
+</application>

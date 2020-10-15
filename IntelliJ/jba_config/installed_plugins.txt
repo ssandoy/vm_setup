@@ -1,0 +1,13 @@
+com.sburlyaev.terminal.plugin
+org.jetbrains.kotlin
+com.chrisrm.idea.MaterialThemeUI
+org.sonarlint.idea
+quokka.js
+net.ashald.envfile
+ru.adelf.idea.dotenv
+org.jetbrains.plugins.vue
+intellij.prettierJS
+org.nik.presentation-assistant
+main.kotlin.com.jimschubert.intellij.swaggercodegen
+Karma
+com.wix.eslint
